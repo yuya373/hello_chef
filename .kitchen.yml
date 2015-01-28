@@ -20,6 +20,7 @@ suites:
       - recipe[hello-chef::ruby]
       - recipe[hello-chef::vim]
       - recipe[hello-chef::mysql]
+      - recipe[hello-chef::linux_programming]
     attributes:
       home_dir: "/home/vagrant"
       user: 'vagrant'
