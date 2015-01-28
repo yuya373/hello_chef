@@ -1,0 +1,28 @@
+---
+driver:
+  name: vagrant
+
+provisioner:
+  name: chef_zero
+
+platforms:
+  - name: ubuntu-12.04
+    driver_config:
+      ssh:
+        forward_agent: true
+        username: 'yuya373'
+
+suites:
+  - name: default
+    run_list:
+      - recipe[hello-chef::default]
+      - recipe[hello-chef::git]
+      - recipe[hello-chef::ruby]
+      - recipe[hello-chef::vim]
+      - recipe[hello-chef::mysql]
+    attributes:
+      home_dir: "/home/vagrant"
+      user: 'vagrant'
+      group: 'vagrant'
+      ruby:
+        version: '2.2.0'
