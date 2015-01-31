@@ -25,6 +25,7 @@ end
 
 git "#{node.home_dir}" do
   user node.user
+  group node.group
   repository 'https://github.com/yuya373/dotfiles.git'
   destination "#{node.home_dir}/dotfiles"
 end
