@@ -9,3 +9,8 @@ bash 'apt-get update' do
 end
 
 package 'git'
+
+bash 'link gitconfig' do
+  code 'ln -sf ~/dotfiles/.gitconfig ~/.gitconfig'
+end
+
